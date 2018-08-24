@@ -51,6 +51,7 @@ const payload_object = {
   }
 };
 
+// The third argument is 'noExtraKeys'. If false, validator will ignore any extra keys present in payload which are not present in schema. If true, validator will throw error if any extra keys in payload.
 const response = ov.validate(schema, payload, false);
 console.log(response);
 
