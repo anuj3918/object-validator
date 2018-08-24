@@ -1,0 +1,11 @@
+{
+  "printWidth": 200,
+  "parser": "babylon",
+  "max-len": "off",
+  "tabWidth": 4,
+  "singleQuote": true,
+  "bracketSpacing": true,
+  "trailingComma": "none",
+  "useTabs": true,
+  "eslintIntegration": true
+}

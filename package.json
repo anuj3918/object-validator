@@ -1,0 +1,51 @@
+{
+  "name": "object-validator",
+  "version": "1.0.0",
+  "description": "This package validates a javascript object against a schema given by the user",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anuj3918/object-validator.git"
+  },
+  "keywords": [
+    "object",
+    "json",
+    "schema",
+    "validate",
+    "validation",
+    "model",
+    "validator",
+    "arguments"
+  ],
+  "author": "Anuj Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anuj3918/object-validator/issues"
+  },
+  "homepage": "https://github.com/anuj3918/object-validator#readme",
+  "dependencies": {
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0",
+    "prettier-eslint": "^8.8.2"
+  },
+  "contributors": [
+    {
+      "name": "Anuj Gupta",
+      "email": "anuj3918@gmail.com"
+    },
+    {
+      "name": "Kalp Sampat",
+      "email": "kalpsampat123@gmail.com"
+    }
+  ]
+}
