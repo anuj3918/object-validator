@@ -1,9 +1,6 @@
 # object-validator
 This javascript package validates an object against a specified schema.
 
-## Status
-Still under development
-
 ## Application
 This package is very useful in validations for cases like:
 1. In applications where interaction with external services is present and IO is in form of objects.
@@ -56,6 +53,7 @@ const payload_object = {
   }
 };
 
+// The third argument is 'noExtraKeys'. If false, validator will ignore any extra keys present in payload which are not present in schema. If true, validator will throw error if any extra keys in payload.
 const response = ov.validate(schema, payload, false);
 console.log(response);
 
@@ -67,30 +65,30 @@ Output =>
      amount: 123.45,
      currency: 'inr',
      cardDetails: { number: '4444555566667777', cvc: '987' },
-     metadata: { merchantName: '' } } }
+     metadata: { merchantName: 'bookmyshow' } } }
 ```
 
-## Details of 'schema' to be passed
-Below are the flags to include in the schema
-```
+## `Schema flags` with decsription
+| Flag  | Value   | Description |
+|-----------|-----------|-------------|
+| keyType   | **mandatory** 'number', 'string', 'object', 'array', 'null' | Specify the datatype of key |
+| allowed   | ['india', 'us', 'china'] (Array of values) | Checks if value of key is among these values |
+| notAllowed   | ['', 'delhi', 'mumbai' ] (Array of values) | Checks if value of key is not among these values |
+| size   | [1,3,5] (Array of integers) | Checks if length of string/array is in one of the given sizes. To be used only with string/array else error |
+| setDefault   | true/false | Whether to set a default value to key if error encountered while validating this key |
+| default   | "Narendra Modi" (any type of value) | Sets a default value to key if error encountered while validating this key |
 
-```
+Note: Try to use default flag only when setDefault is set to true for the key. It will not throw an error but just a good practice.
 
-## Sample CSV file
-```
-first_name,email
-anuj,anuj3918@gmail.com
-gupta,anuj.gupta@bookmyshow.com
-```
 ## To do
-1. Support for Aerospike.
-2. Adding more flexibility while creating connections to cache.
-3. Log any failures while inserting.
-4. Retry for only the failures keys encountered previously.
-5. Load testing metrics to be added in Readme.md
-6. Pausing and resuming stream while reconnecting to cache.
+1. More but simple features for numbers.
+2. Test cases.
+3. Aggregate all errors and return error as an array.
 
 
 ## Contributions
 You can add any of the above features into this package and create a pull request.
 For any further queries, write to anuj3918@gmail.com
+
+## Keywords
+object validation schema model external nodejs javascript typescript flow datatype type-validation
