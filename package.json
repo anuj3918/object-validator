@@ -4,7 +4,8 @@
   "description": "This package validates a javascript object against a schema given by the user",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "./node_modules/.bin/mocha --reporter spec --exit test/test.js",
+    "test-watch": "nodemon ./node_modules/.bin/mocha --reporter spec test/test.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
   },
   "homepage": "https://github.com/anuj3918/object-validator#readme",
   "dependencies": {
+    "flat": "^4.1.0",
     "lodash": "^4.17.10"
   },
   "devDependencies": {
