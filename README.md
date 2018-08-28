@@ -1,6 +1,9 @@
 # object-validator
 This javascript package validates an object against a specified schema.
 
+## Status
+Still under development
+
 ## Application
 This package is very useful in validations for cases like:
 1. In applications where interaction with external services is present and IO is in form of objects.
