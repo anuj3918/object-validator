@@ -4,7 +4,7 @@
   "description": "This package validates a javascript object against a schema given by the user",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec --exit test/test.js",
+    "test": "mocha --reporter spec --exit test/test.js",
     "test-watch": "nodemon ./node_modules/.bin/mocha --reporter spec test/test.js",
     "test-with-coverage": "nyc --reporter=html ./node_modules/.bin/mocha --reporter spec --exit test/test.js"
   },
