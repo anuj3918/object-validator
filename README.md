@@ -1,4 +1,4 @@
-kasper - a simple object schema validator with 100% test coverage
+kasper - a very simple object schema validator
 ===========================
 [![Build Status](https://travis-ci.org/anuj3918/object-validator.svg?branch=master)](https://travis-ci.org/anuj3918/object-validator)
 [![Coverage Status](https://coveralls.io/repos/github/anuj3918/object-validator/badge.svg?branch=master)](https://coveralls.io/github/anuj3918/object-validator?branch=master)
