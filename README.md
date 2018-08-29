@@ -81,16 +81,16 @@ let output = {
 ## `Schema flags` with decsription
 | Flag  | Value   | Description |
 |-----------|-----------|-------------|
-| keyType   | **mandatory** 'number', 'string', 'object', 'array', 'null', 'date', 'error' | Specify the datatype of key |
-| allowed   | ['india', 'us', 'china'] (Array of values) | Checks if value of key is among these values |
-| notAllowed   | ['', 'delhi', 'mumbai' ] (Array of values) | Checks if value of key is not among these values |
-| size   | [1,3,5] (Array of integers) | Checks if length of string/array is in one of the given sizes. Use only with string/array |
-| regExp   | /hello/g (a valid regular exp) | Checks if string matches a regular expression |
-| max   | 100 (any numerical value) | Checks if number value is not greater than max |
-| min   | 1 (any numerical value) | Checks if number value is not less than min |
-| range   | [1, 10] ([min, max]) | Checks if number lies in the specified range (both limits inclusive) |
-| default   | "Narendra Modi" (any type of value) | Sets a default value to key if error encountered while validating this key |
-| strictObject   | false (boolean) | If false, treats date/error/null/array as type 'object' (javascript native behaviour) |
+| **keyType**   | `['number', 'boolean', 'string', 'object', 'array', 'null', 'date', 'error']` | **mandatory** Specify the types for key as an array |
+| allowed   | `['india', 'us', 'china']` (array of values) | Checks if value of key is among these values |
+| notAllowed   | `['', 'delhi', 'mumbai' ]` (array of values) | Checks if value of key is not among these values |
+| size   | `[1,3,5]` (Array of integers) | Checks if length of string/array is in one of the given sizes. Use only with string/array |
+| regExp   | `/hello/g` (a valid regular exp) | Checks if string matches a regular expression |
+| max   | `100` (any numerical value) | Checks if number value is not greater than max |
+| min   | `1` (any numerical value) | Checks if number value is not less than min |
+| range   | `[1, 10]` (array of min, max) | Checks if number lies in the specified range (both limits inclusive) |
+| default   | `"Narendra Modi"` (any type of value) | Sets a default value to key if error encountered while validating this key |
+| strictObject   | `false` (boolean) | If false, treats date/error/null/array as type 'object' (javascript native behaviour) |
 
 ## `Options` with decsription
 | Flag  | Default Value   | Description |
