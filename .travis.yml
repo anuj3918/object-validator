@@ -1,3 +1,5 @@
 language: node_js
 node_js:  
   - "node"
+script:
+  nyc npm test && nyc report --reporter=text-lcov | coveralls
