@@ -23,7 +23,7 @@ https://github.com/anuj3918/object-validator.git
 
 ## Code example
 ```
-const ov = require('./index');
+const kasper = require('kasper');
 
 const schema = {
 	id: { keyType: [ 'string' ], notAllowed: [ 'abc001' ], regExp: /abc/g },
@@ -60,7 +60,7 @@ const options = {
 };
 
 // You can omit the last parameter i.e. options if you want to use default options only
-const response = ov.validate(schema, payload, options);
+const response = kasper.validate(schema, payload, options);
 console.log(response);
 
 // Output
@@ -104,4 +104,4 @@ You can add any of the above features into this package and create a pull reques
 For any further queries, write to anuj3918@gmail.com
 
 ## Keywords
-object validation schema model external nodejs javascript typescript flow datatype type-validation
+object validation schema model external nodejs javascript typescript flow datatype type-validation kasper casper
