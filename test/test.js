@@ -249,6 +249,25 @@ describe('- Testing default flag', () => {
 	});
 });
 
+describe('- Testing matchPartialSchema option', () => {
+	const partialSchemaData = require('./data/partialSchema');
+	let i = 1;
+	partialSchemaData.forEach((tc) => {
+		const { description, schema, payload, expectedError, expectedMessage, expectedResult } = tc;
+		const response = ov.validate(schema, payload, { matchPartialSchema: true });
+		// printer(i++, response);
+		it(description, function(done) {
+			if (response.err) {
+				expect(expectedError).to.be.equal(response.err.message);
+			}
+			expect(expectedMessage).to.be.equal(response.message);
+			expect(expectedResult).to.deep.equal(response.result);
+
+			done();
+		});
+	});
+});
+
 describe('- Testing success cases', () => {
 	const successData = require('./data/success');
 	let i = 1;

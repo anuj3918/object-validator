@@ -71,6 +71,20 @@ module.exports = [
 		}
 	},
 	{
+		description: 'Checking default flag on regExp error',
+		schema: {
+			name: { keyType: [ 'string' ], default: 'anuj', regExp: new RegExp(/hello/g) }
+		},
+		payload: {
+			name: 'kumar'
+		},
+		expectedError: '',
+		expectedMessage: 'Validations successful',
+		expectedResult: {
+			name: 'anuj'
+		}
+	},
+	{
 		description: 'Checking default flag on range error',
 		schema: {
 			age: { keyType: [ 'number' ], default: 0, range: [ 0, 10 ] }
