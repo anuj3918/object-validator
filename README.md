@@ -7,15 +7,15 @@ A javascript package which helps you validate your objects against a specified s
 
 
 ## Application
-This package is useful in validations for cases like:
-1. In applications where interaction with external services is present and I/O is in form of objects.
+This package is useful in validations for cases such as:
+1. In applications where interaction with external services is frequent and I/O is in form of objects.
 2. In functions where object needs to be validated before executing main function logic.
 3. In places where you need to set default values if something mismatches from schema.
-4. In places where you mention a big schema for the facade and partially validate your object as it gets filled with keys.
+4. In places where you write a big schema and partially validate your object as it gets filled with keys as the code flows.
 
 ## Installation
 ```
-npm install --save object-validator
+npm install --save kasper
 ```
 
 ## Github repository
@@ -104,4 +104,4 @@ You can add any of the above features into this package and create a pull reques
 For any further queries, write to anuj3918@gmail.com
 
 ## Keywords
-object validation schema model external nodejs javascript typescript flow datatype type-validation kasper casper
+kasper object validation schema model external nodejs javascript typescript flow datatype type-validation json validator casper
