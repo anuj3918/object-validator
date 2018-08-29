@@ -48,5 +48,19 @@ module.exports = [
 		expectedResult: {
 			greet: 'Hello anuj'
 		}
+	},
+	{
+		description: 'Checking regExp flag by passing valid regExp and not a string',
+		schema: {
+			greet: { keyType: [ 'number', 'string' ], regExp: new RegExp(/Hello/g) }
+		},
+		payload: {
+			greet: 1
+		},
+		expectedError: '',
+		expectedMessage: 'Validations successful',
+		expectedResult: {
+			greet: 1
+		}
 	}
 ];

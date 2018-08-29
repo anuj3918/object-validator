@@ -12,6 +12,20 @@ module.exports = [
 		expectedResult: null
 	},
 	{
+		description: 'Checking max flag with different keyType',
+		schema: {
+			amount: { keyType: [ 'string', 'number' ], range: [ 50, 100 ] }
+		},
+		payload: {
+			amount: '70'
+		},
+		expectedError: '',
+		expectedMessage: 'Validations successful',
+		expectedResult: {
+			amount: '70'
+		}
+	},
+	{
 		description: 'Checking range flag by passing invalid value of flag',
 		schema: {
 			amount: { keyType: [ 'number' ], range: 50 }

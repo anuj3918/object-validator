@@ -72,5 +72,19 @@ module.exports = [
 		expectedResult: {
 			amount: 60
 		}
+	},
+	{
+		description: 'Checking min flag success case by passing different datatype of value',
+		schema: {
+			amount: { keyType: [ 'string', 'number' ], min: 50 }
+		},
+		payload: {
+			amount: '60'
+		},
+		expectedError: '',
+		expectedMessage: 'Validations successful',
+		expectedResult: {
+			amount: '60'
+		}
 	}
 ];

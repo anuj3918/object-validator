@@ -72,5 +72,19 @@ module.exports = [
 		expectedResult: {
 			amount: 40
 		}
+	},
+	{
+		description: 'Checking max flag success case by passing different datatype of value',
+		schema: {
+			amount: { keyType: [ 'string', 'number' ], max: 50 }
+		},
+		payload: {
+			amount: '40'
+		},
+		expectedError: '',
+		expectedMessage: 'Validations successful',
+		expectedResult: {
+			amount: '40'
+		}
 	}
 ];

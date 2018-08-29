@@ -1,6 +1,8 @@
-node_modules/
+node_modules
 check.js
 c.js
 backup.js
 csv/
 generic.js
+coverage
+.nyc_output
