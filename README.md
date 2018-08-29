@@ -1,19 +1,17 @@
-object-validator - a simple object schema validator
+kasper - a simple object schema validator with 100% test coverage
 ===========================
 [![Build Status](https://travis-ci.org/anuj3918/object-validator.svg?branch=master)](https://travis-ci.org/anuj3918/object-validator)
 [![Coverage Status](https://coveralls.io/repos/github/anuj3918/object-validator/badge.svg?branch=master)](https://coveralls.io/github/anuj3918/object-validator?branch=master)
 
 A javascript package which helps you validate your objects against a specified schema.
 
+
 ## Application
 This package is useful in validations for cases like:
-1. In applications where interaction with external services is present and IO is in form of objects.
-2. In functions where object needs to be validated before inserting it in database.
-
-## Why ?
-1. In a critical system where you want to prevent null/undefined/invalid entries against columns in our database, we can validate our object before insertion.
-2. If a function takes an object as argument, it is good to validate the object before running the code to avoid runtime errors later on.
-3. External services might change the data contract (input/output) and this might lead to runtime code failures.
+1. In applications where interaction with external services is present and I/O is in form of objects.
+2. In functions where object needs to be validated before executing main function logic.
+3. In places where you need to set default values if something mismatches from schema.
+4. In places where you mention a big schema for the facade and partially validate your object as it gets filled with keys.
 
 ## Installation
 ```
