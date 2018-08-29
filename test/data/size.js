@@ -59,4 +59,30 @@ module.exports = [
         expectedMessage: 'Validations successful',
         expectedResult: { name: 'anuj' }
     },
+    {
+        description: "Checking size flag success case by passing array",
+        schema: {
+            name: { keyType: ["array"], size: [2] }
+        },
+        payload: {
+            name: ["anuj", "gupta"]
+        },
+        expectedError: null,
+        expectedMessage: 'Validations successful',
+        expectedResult: {
+            name: ["anuj", "gupta"]
+        }
+    },
+    {
+        description: "Checking size flag failure case by passing array",
+        schema: {
+            name: { keyType: ["array"], size: [1] }
+        },
+        payload: {
+            name: ["anuj", "gupta"]
+        },
+        expectedError: 'Size mismatch of key: name',
+        expectedMessage: 'Size mismatch error',
+        expectedResult: null
+    }
 ]

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec --exit test/test.js",
-    "test-watch": "nodemon ./node_modules/.bin/mocha --reporter spec test/test.js"
+    "test-watch": "nodemon ./node_modules/.bin/mocha --reporter spec test/test.js",
+    "test-with-coverage": "nyc --reporter=html ./node_modules/.bin/mocha --reporter spec --exit test/test.js"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.14.0",
     "mocha": "^5.2.0",
+    "nyc": "^13.0.1",
     "prettier-eslint": "^8.8.2"
   },
   "contributors": [
