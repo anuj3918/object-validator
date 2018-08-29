@@ -44,6 +44,7 @@ const validate = (userSchema, userObj, userOptions) => {
 			return { err, message: 'Partial schema creation error', result: null };
 		}
 		schema = result;
+		console.log('Schema: ', schema);
 	}
 
 	// Checks if schema and payload are a strict match i.e. no extra keys in schema or object

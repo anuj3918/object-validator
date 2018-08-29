@@ -24,8 +24,8 @@ module.exports = [
 		},
 		payload: {},
 		expectedError: 'No valid fields in passed params, could not create partial schema',
-		expectedMessage: 'Partial schema creation error',
-		expectedResult: null
+		expectedMessage: 'Validations successful',
+		expectedResult: {}
 	},
 	{
 		description: 'Checking nested level object validation of partial schema',
@@ -64,6 +64,23 @@ module.exports = [
 				}
 			},
 			age: 25
+		}
+	},
+	{
+		description: 'Checking object validation of partial schema when schema is small',
+		schema: {
+			name: { keyType: [ 'string' ] },
+			age: { keyType: [ 'number' ] }
+		},
+		payload: {
+			name: 'anuj',
+			gender: 'male'
+		},
+		expectedError: '',
+		expectedMessage: 'Validations successful',
+		expectedResult: {
+			name: 'anuj',
+			gender: 'male'
 		}
 	}
 ];

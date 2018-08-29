@@ -81,5 +81,18 @@ module.exports = [
 		expectedError: 'Number of keys in object and schema are not equal',
 		expectedMessage: 'Strictmatch object error',
 		expectedResult: null
+	},
+	{
+		description: 'Checking object validation of partial schema when schema is small but with strictMatch',
+		schema: {
+			name: { keyType: [ 'string' ] }
+		},
+		payload: {
+			name: 'anuj',
+			gender: 'male'
+		},
+		expectedError: 'Number of keys in object and schema are not equal',
+		expectedMessage: 'Strictmatch object error',
+		expectedResult: null
 	}
 ];

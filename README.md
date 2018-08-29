@@ -96,7 +96,7 @@ let output = {
 | Flag  | Default Value   | Description |
 |-----------|-----------|-------------|
 | matchPartialSchema   | false | If true, checks only the keys present in object with that in schema |
-| strictMatch   | false | If true, checks if object does not contain any extra keys than mentioned in schema |
+| strictMatch   | false | If true, checks if object does not contain any extra keys than those mentioned in schema |
 | setDefaultValues   | true | If false, does not set default value to a key even if default value is specified |
 
 ## Contributions
