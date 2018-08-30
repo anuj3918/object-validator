@@ -191,6 +191,26 @@ describe('- Testing min flag', () => {
 	});
 });
 
+describe('- Testing isInteger flag', () => {
+	const isIntegerData = require('./data/isInteger');
+	let i = 1;
+	isIntegerData.forEach((tc) => {
+		const { description, schema, payload, expectedError, expectedMessage, expectedResult } = tc;
+		const response = ov.validate(schema, payload, {});
+		printer(i++, response);
+
+		it(description, function(done) {
+			if (response.err) {
+				expect(expectedError).to.be.equal(response.err.message);
+			}
+			expect(expectedMessage).to.be.equal(response.message);
+			expect(expectedResult).to.deep.equal(response.result);
+
+			done();
+		});
+	});
+});
+
 describe('- Testing range flag', () => {
 	const rangeData = require('./data/range');
 	let i = 1;

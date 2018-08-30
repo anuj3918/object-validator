@@ -31,8 +31,8 @@ module.exports = [
 		payload: {
 			name: true
 		},
-		expectedError: 'KeyType not in ["boolean"] for key: name',
-		expectedMessage: 'Type mismatch occurred',
+		expectedError: 'Value passed among notAllowed values of key: name',
+		expectedMessage: 'Invalid value error',
 		expectedResult: null
 	},
 	{

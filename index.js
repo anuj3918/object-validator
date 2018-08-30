@@ -44,7 +44,6 @@ const validate = (userSchema, userObj, userOptions) => {
 			return { err, message: 'Partial schema creation error', result: null };
 		}
 		schema = result;
-		console.log('Schema: ', schema);
 	}
 
 	// Checks if schema and payload are a strict match i.e. no extra keys in schema or object
@@ -227,6 +226,29 @@ const validate = (userSchema, userObj, userOptions) => {
 			}
 
 			let response = common.checkMin(k, v, obj);
+			let { err, message, result } = response;
+			if (err) {
+				if (setDefaultValues && v.default !== undefined) {
+					obj[k] = v.default;
+				} else {
+					return { err, message, result: null };
+				}
+			}
+		}
+
+		// isInteger check for number
+		if (v.isInteger) {
+			if (!v.keyType.includes('number')) {
+				let err = new Error(`IsInteger flag is valid only on number datatype for key: ${k}`);
+				return { err, message: 'Invalid input error', result: null };
+			}
+
+			if (common.getTypeOf(v.isInteger) !== 'boolean') {
+				let err = new Error(`IsInteger flag can only have boolean value for key: ${k}`);
+				return { err, message: 'Invalid input error', result: null };
+			}
+
+			let response = common.checkIsInteger(k, v, obj);
 			let { err, message, result } = response;
 			if (err) {
 				if (setDefaultValues && v.default !== undefined) {
