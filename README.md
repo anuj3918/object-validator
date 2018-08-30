@@ -32,7 +32,7 @@ const schema = {
 	currency: { keyType: [ 'string' ], default: 'usd', allowed: [ 'inr', 'usd' ], notAllowed: [ '' ] },
 	cardDetails: {
 		number: { keyType: [ 'string' ], size: [ 12, 16, 20 ] },
-		cvc: { keyType: [ 'string' ], size: [ 3 ], isInteger: true },
+		cvc: { keyType: [ 'number' ], isInteger: true },
 		month: { keyType: [ 'number' ], range: [ 1, 12 ], isInteger: true },
 		year: { keyType: [ 'number' ], range: [ 2018, 2050 ], isInteger: true }
 	},
@@ -48,9 +48,13 @@ const payload = {
 	currency: '',
 	cardDetails: {
 		number: '4444555566667777',
-		cvc: '987'
+		cvc: 987,
+		month: 2,
+		year: 2020
 	},
-	errors: undefined
+	errors: undefined,
+	datetime: null,
+	countries: ['india', 'nepal']
 };
 
 const options = {
@@ -72,8 +76,10 @@ let output = {
 		mode: 'card',
 		amount: 123.45,
 		currency: 'usd',
-		cardDetails: { number: '4444555566667777', cvc: '987' },
-		errors: null
+		cardDetails: { number: '4444555566667777', cvc: 987 month: 2, year: 2020},
+		errors: null,
+		datetime: 2018-08-30T19:30:18.386Z,
+		countries: ['india', 'nepal']
 	}
 };
 ```
