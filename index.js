@@ -40,9 +40,6 @@ const validate = (userSchema, userObj, userOptions) => {
 
 	if (matchPartialSchema) {
 		let { err, result } = helpers.getPartialSchema(schema, obj);
-		if (err) {
-			return { err, message: 'Partial schema creation error', result: null };
-		}
 		schema = result;
 	}
 

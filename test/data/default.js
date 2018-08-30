@@ -127,6 +127,20 @@ module.exports = [
 		}
 	},
 	{
+		description: 'Checking default flag on isInteger error',
+		schema: {
+			age: { keyType: [ 'number' ], default: 0, isInteger: true }
+		},
+		payload: {
+			age: 1.23
+		},
+		expectedError: '',
+		expectedMessage: 'Validations successful',
+		expectedResult: {
+			age: 0
+		}
+	},
+	{
 		description: 'Checking default flag on nested objects',
 		schema: {
 			name: {
