@@ -32,9 +32,9 @@ const schema = {
 	currency: { keyType: [ 'string' ], default: 'usd', allowed: [ 'inr', 'usd' ], notAllowed: [ '' ] },
 	cardDetails: {
 		number: { keyType: [ 'string' ], size: [ 12, 16, 20 ] },
-		cvc: { keyType: [ 'string' ], size: [ 3 ] },
-		month: { keyType: [ 'number' ], range: [ 1, 12 ] },
-		year: { keyType: [ 'number' ], range: [ 2018, 2050 ] }
+		cvc: { keyType: [ 'string' ], size: [ 3 ], isInteger: true },
+		month: { keyType: [ 'number' ], range: [ 1, 12 ], isInteger: true },
+		year: { keyType: [ 'number' ], range: [ 2018, 2050 ], isInteger: true }
 	},
 	errors: { keyType: [ 'error', 'null' ], default: null },
 	datetime: { keyType: [ 'date', 'string' ], default: new Date() },
@@ -89,6 +89,7 @@ let output = {
 | max   | `100` (any numerical value) | Checks if number value is not greater than max |
 | min   | `1` (any numerical value) | Checks if number value is not less than min |
 | range   | `[1, 10]` (array of min, max) | Checks if number lies in the specified range (both limits inclusive) |
+| isInteger   | `true` (any boolean value) | Checks if number value is an integer |
 | default   | `"Narendra Modi"` (any type of value) | Sets a default value to key if error encountered while validating this key |
 | strictObject   | `false` (boolean) | If false, treats date/error/null/array as type 'object' (javascript native behaviour) |
 
