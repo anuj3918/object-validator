@@ -8,10 +8,12 @@ A javascript package which helps you validate your objects against a specified s
 
 ## Application
 This package is useful in validations for cases such as:
-1. In applications where interaction with external services is frequent and I/O is in form of objects.
-2. In functions where object needs to be validated before executing main function logic.
-3. In places where you need to set default values if something mismatches from schema.
-4. In places where you write a big schema and partially validate your object as it gets filled with keys as the code flows.
+1. In applications where you frequently interact with external services and I/O is in form of objects.
+2. In code flows where object needs to be validated for any undefined/null values before executing main function logic.
+3. In places where you need to set default values if something mismatches from schema (configuration variables)
+4. In places where you write a final schema and partially validate your object as it keys get added to it as the code flows.
+
+Further explanation: https://medium.com/@anujkumargupta/why-validate-your-objects-with-kasper-8aa7eb3093e1
 
 ## Installation
 ```
@@ -58,9 +60,9 @@ const payload = {
 };
 
 const options = {
-	matchPartialSchema: true,
-	strictMatch: false,
-	setDefaultValues: true
+	matchPartialSchema: true,    // default: false
+	strictMatch: false,	     // default: false
+	setDefaultValues: true	     // default: true
 };
 
 // You can omit the last parameter i.e. options if you want to use default options only
@@ -111,4 +113,4 @@ You can add any of the above features into this package and create a pull reques
 For any further queries, write to anuj3918@gmail.com
 
 ## Keywords
-kasper object validation schema model external nodejs javascript typescript flow datatype type-validation json validator casper
+kasper object validation schema model external nodejs javascript typescript flow datatype type-validation json validator casper blueprint
