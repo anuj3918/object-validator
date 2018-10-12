@@ -30,7 +30,8 @@
   "homepage": "https://github.com/anuj3918/object-validator#readme",
   "dependencies": {
     "flat": "^4.1.0",
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
@@ -52,6 +53,10 @@
     {
       "name": "Kalp Sampat",
       "email": "kalpsampat123@gmail.com"
+    },
+    {
+      "name": "Rahul Chawla",
+      "email": "rahulchawla2801@gmail.com"
     }
   ],
   "reveal": true

@@ -164,10 +164,10 @@ const validate = (userSchema, userObj, userOptions) => {
 			}
 		}
 
-		// Range check for number
+		// Range check for number or date
 		if (v.range) {
-			if (!v.keyType.includes('number')) {
-				let err = new Error(`Range flag is valid only on number datatype for key: ${k}`);
+			if (!(v.keyType.includes('number') || v.keyType.includes('date')) ) {
+				let err = new Error(`Range flag is valid only on number or date datatype for key: ${k}`);
 				return { err, message: 'Invalid input error', result: null };
 			}
 
