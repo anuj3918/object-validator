@@ -40,6 +40,7 @@ const schema = {
 	},
 	errors: { keyType: [ 'error', 'null' ], default: null },
 	datetime: { keyType: [ 'date', 'string' ], default: new Date() },
+	birthday: { keyType: [ 'date' ], range: ['25/11/1995 00:00:00', '31/12/2050 23:59:59'] },
 	countries: { keyType: [ 'array' ], allowed: [ [ 'india', 'nepal' ], [ 'england', 'iceland' ] ], notAllowed: [ [] ] }
 };
 
@@ -56,6 +57,7 @@ const payload = {
 	},
 	errors: undefined,
 	datetime: null,
+	birthday: new Date(),
 	countries: ['india', 'nepal']
 };
 
@@ -81,6 +83,7 @@ let output = {
 		cardDetails: { number: '4444555566667777', cvc: 987 month: 2, year: 2020},
 		errors: null,
 		datetime: 2018-08-30T19:30:18.386Z,
+		birthday: 2018-08-30T19:30:18.386Z,
 		countries: ['india', 'nepal']
 	}
 };
@@ -96,7 +99,8 @@ let output = {
 | regExp   | `/hello/g` (a valid regular exp) | Checks if string matches a regular expression |
 | max   | `100` (any numerical value) | Checks if number value is not greater than max |
 | min   | `1` (any numerical value) | Checks if number value is not less than min |
-| range   | `[1, 10]` (array of min, max) | Checks if number lies in the specified range (both limits inclusive) |
+| range  | `[1, 10]` | **Number**: Checks if number lies in the specified range (both limits inclusive) |
+| range  | `['25/11/1995 00:00:00', '31/12/2050 23:59:59']` | **Date**: Checks if date lies in the specified range (both limits inclusive). Date format should be 'DD/MM/YYYY HH:mm:ss'  |
 | isInteger   | `true` (any boolean value) | Checks if number value is an integer |
 | default   | `"Narendra Modi"` (any type of value) | Sets a default value to key if error encountered while validating this key |
 | strictObject   | `false` (boolean) | If false, treats date/error/null/array as type 'object' (javascript native behaviour) |
